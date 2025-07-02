@@ -1,11 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
 
-interface Pixel {
-  color: string | null;
-  x: number;
-  y: number;
-}
-
 type GridSize = {
   width: number;
   height: number;
@@ -165,8 +159,8 @@ const App: React.FC = () => {
     setPixels(new Map());
   };
 
-  const renderGrid = (): JSX.Element[] => {
-    const grid: JSX.Element[] = [];
+  const renderGrid = (): React.ReactElement[] => {
+    const grid: React.ReactElement[] = [];
     const pixelSize = isMobile ? 'w-6 h-6' : 'w-4 h-4';
     
     for (let y = 0; y < gridSize.height; y++) {
